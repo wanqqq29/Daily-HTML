@@ -1,0 +1,234 @@
+<!--
+ * @Author: wanqqq29
+ * @Date: 2021-12-31 09:46:23
+ * @LastEditTime: 2021-12-31 09:46:24
+ * @LastEditors: wanqqq29
+ * @Description: blog.wanqqq29.cn
+ * @FilePath: \huoland:\1x3Daily-HTML\三种计算器实现加减乘除取余运算.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三种计算器实现加减乘除取余运算</title>
+</head>
+<body>
+    <div>
+        <div>
+            <p>
+                1：运算符采用swith case 进行5个分别判断
+            </p>
+        </div>
+        <div>
+            <input type="text" size="5" id="num1" value="">
+            <select id="ysf">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+            <input type="text" size="5" id="num2" value="">
+            <input type="button" value="计算" id="btn">
+        </div>
+        <p id="res">请输入数字</p>
+    </div>
+
+    <script>
+        document.getElementById('btn').onclick = function() {
+            var num1 = document.getElementById('num1').value;
+            var num2 = document.getElementById('num2').value;
+            var ysf = document.getElementById('ysf').value;
+            var result = "ERROR!";
+            var flag = true; //做一个标记 是否执行运算
+
+
+            if (num1 == "") {
+                result += "第一个运算符为空#";
+                flag = false;
+            } else {
+                num1 = parseFloat(num1); //num 是字符串 运算时要转换成数,否则 会 把两个字符拼接起来
+                if (isNaN(num1)) {
+                    result += "第一个运算元不是有效数字";
+                    flag = false;
+                }
+            }
+
+            if (num2 == "") {
+                result += "第二个运算符为空#";
+                flag = false;
+            } else {
+                num2 = parseFloat(num2);
+                if (isNaN(num2)) {
+                    result += "第二个运算元不是有效数字";
+                    flag = false;
+                }
+
+            }
+
+            if (flag) {
+                switch (ysf) {
+                    case '+':
+                        result = "运算结果" + num1 + "+" + num2 + "=" + (num1 + num2);
+                        break;
+                    case '-':
+                        result = "运算结果" + num1 + "-" + num2 + "=" + (num1 - num2);
+                        break;
+                    case '*':
+                        result = "运算结果" + num1 + "*" + num2 + "=" + (num1 * num2);
+                        break;
+                    case '/':
+                        if (num2 == 0) {
+                            result = "除数不能为0！"
+                        } else {
+                            result = "运算结果" + num1 + "/" + num2 + "=" + (num1 / num2);
+                            break;
+                        }
+                    case '%':
+                        if (num2 == 0) {
+                            result = "除数不能为0！"
+                        } else {
+                            result = "运算结果" + num1 + "%" + num2 + "=" + (num1 % num2);
+                            break;
+                        }
+                }
+            }
+            document.getElementById('res').innerHTML = result;
+        }
+    </script>
+    <div>
+        <div>
+            <span>
+                2：运算符用变量表示,条件判断运算符
+            </span>
+        </div>
+        <div>
+            <input type="text" id="num11" value="">
+            <input type="text" id="ysf2" size="1" value="">
+            <input type="text" id="num21" value="">
+            <button id="btn2">=</button>
+            <span id="res2"></span>
+        </div>
+    </div>
+
+<script>
+        document.getElementById("btn2").onclick = function() {
+            var num11 = document.getElementById("num11").value;
+            var num21 = document.getElementById("num21").value;
+            var ysf2 = document.getElementById("ysf2").value;
+            var results = "ERRORS!";
+            var flag = false;
+
+            if (num11 != '') {
+                if (isNaN(num11)) {
+                    results += "请检查输入的第一个元"
+                } else {
+                    num11 = parseFloat(num11);
+                    flag = true;
+                }
+            } else {
+                results += "第一个元不能为空"
+            }
+
+            if (num21 != '') {
+                if (isNaN(num21)) {
+                    results += "请检查输入的第二个元"
+                } else {
+                    num21 = parseFloat(num21);
+                    flag = true;
+                }
+            } else {
+                results += "第二个元不能为空"
+            }
+
+            num21 = parseFloat(num21);
+            if (flag) {
+                if (ysf2 == '+') {
+                    results = (num11 + num21);
+                } else if (ysf2 == '-') {
+                    results = (num11 - num21);
+                } else if (ysf2 == '*') {
+                    results = (num11 * num21);
+                } else if (ysf2 == '/') {
+                    if (num21 != 0) {
+                        results = (num11 / num21);
+                    } else {
+                        results += "除数不能为0"
+                    }
+                } else if (ysf2 == '%') {
+                    if (num21 != 0) {
+                        results = (num11 % num21);
+                    } else {
+                        results += "除数不能为0"
+                    }
+                } else {
+                    results += "运算符输入错误，支持‘加减乘除取余’"
+                }
+            }
+            document.getElementById("res2").innerHTML = results;
+        }
+    </script>
+    <div>
+        <span>3：在框内输入自动识别运算（数字与运算符号之间空格}</span>
+        <div>
+            <input type="text" value="" id="content">
+            <button id="btn333">计算</button>
+            <p id="res33">结果：</p>
+        </div>
+    </div>
+
+     <script>
+        document.getElementById("btn333").onclick = function() {
+            var string = document.getElementById("content").value;
+            var num = string.match(/\d+(.\d+)?/g);
+            var result = "ERRORS!";
+            var flag = false;
+            if (string != "") {
+                if (isNaN(num[0])) {
+                    document.getElementById("res33").innerHTML = "不要输入字母，数字与符号之间空格";
+                } else if (isNaN(num[1])) {
+                    document.getElementById("res33").innerHTML = "请检查式子";
+                } else {
+                    flag = true;
+                }
+            } else {
+                document.getElementById("res33").innerHTML = "请检查式子";
+            }
+
+            if (flag) {
+                num[0] = parseFloat(num[0]);
+                num[1] = parseFloat(num[1]);
+                if (string.indexOf('+') != '-1') {
+                    result = '结果：' + (num[0] + num[1]);
+                } else if (string.indexOf("-") != '-1') {
+                    result = '结果：' + (num[0] - num[1]);
+                } else if (string.indexOf("*") != '-1') {
+                    result = '结果：' + (num[0] * num[1]);
+                } else if (string.indexOf("/") != '-1') {
+                    if (num[1] != 0) {
+                        result = '结果：' + (num[0] / num[1]);
+                    } else {
+                        result = "除数不能为0"
+                    }
+                } else if (string.indexOf("%") != '-1') {
+                    if (num[1] != 0) {
+                        result = '结果：' + (num[0] % num[1]);
+                    } else {
+                        result = "除数不能为0"
+                    }
+                } else {
+                    result = "请输入正确的运算符号"
+                }
+
+                document.getElementById("res33").innerHTML = result;
+            }
+            document.getElementById("content").onclick = function() {
+                document.getElementById("res33").innerHTML = "结果：";
+            }
+        }
+    </script>
+
+</body>
+</html>
