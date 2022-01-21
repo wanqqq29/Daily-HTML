@@ -12,9 +12,11 @@ body,
     0% {
         opacity: 0.2;
     }
-    50%{
+
+    50% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 1;
     }
@@ -79,6 +81,7 @@ body,
 
         .social {
             margin-top: 10% !important;
+
             div {
                 flex: 1;
             }
@@ -211,6 +214,7 @@ body,
         justify-content: center;
         /*水平居中*/
         margin-top: 30px;
+
         div {
             justify-items: center;
             justify-content: space-around;
