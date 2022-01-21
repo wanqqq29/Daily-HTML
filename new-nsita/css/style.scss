@@ -10,44 +10,79 @@ body,
 
 @keyframes star {
     0% {
-        opacity: 0;
+        opacity: 0.2;
     }
-
+    50%{
+        opacity: 0.5;
+    }
     100% {
         opacity: 1;
     }
 }
 
+.content {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 4rem;
+}
+
 @media (min-width:992px) {
-    .nav-item {
-        background-color: rgba(0, 0, 0, 0) !important;
+    .s1 {
+        .nav-item {
+            background-color: rgba(0, 0, 0, 0) !important;
+        }
+
+        .content {
+            padding-left: 10% !important;
+            padding-right: 10% !important;
+            padding-top: 4rem;
+        }
+
+        .logo {
+            height: 260px !important;
+            width: 260px !important;
+            position: absolute;
+            top: 15%;
+            right: 10%;
+        }
+
+        .text {
+            position: absolute;
+            top: 30%;
+        }
+
+        .vx {
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+            width: 30rem !important;
+            height: 12.5rem !important;
+        }
     }
 
-    .content {
-        padding-left: 10% !important;
-        padding-right: 10% !important;
-        padding-top: 4rem;
-    }
+    .s2 {
+        .title {
+            text-align: center;
 
-    .logo {
-        height: 260px !important;
-        width: 260px !important;
-        position: absolute;
-        top: 15%;
-        right: 10%;
-    }
+            h1 {
+                font-size: 2.5rem !important;
+            }
 
-    .text {
-        position: absolute;
-        top: 30%;
-    }
+            h2 {
+                font-size: 2rem !important;
+            }
+        }
 
-    .vx {
-        position: absolute;
-        bottom: 10%;
-        right: 5%;
-        width: 30rem !important;
-        height: 12.5rem !important;
+        .p {
+            font-size: 1.5rem;
+        }
+
+        .social {
+            margin-top: 10% !important;
+            div {
+                flex: 1;
+            }
+        }
     }
 }
 
@@ -125,7 +160,8 @@ body,
 
         .text {
             .origin {
-                color: #FF8D1A;
+                color: #fcef38dc;
+                height: 9rem;
 
                 h1 {
                     display: none;
@@ -140,6 +176,51 @@ body,
     background: url(../assets/section2.webp);
     background-repeat: no-repeat;
     background-size: cover;
+
+    text {
+        color: white;
+
+        .title {
+            text-align: center;
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+        }
+
+        .p {
+            margin-top: 20px;
+
+            p {
+                text-indent: 2rem
+            }
+        }
+    }
+
+    .social {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        /*垂直居中*/
+        justify-content: center;
+        /*水平居中*/
+        margin-top: 30px;
+        div {
+            justify-items: center;
+            justify-content: space-around;
+            height: 120px;
+        }
+
+        img {
+            width: 80%;
+        }
+    }
 }
 
 .s3 {
