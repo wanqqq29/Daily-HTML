@@ -4,6 +4,39 @@ body,
   padding: 0;
 }
 
+.row {
+  margin-right: 0px !important;
+}
+
+@media (min-width: 992px) {
+  .nav-item {
+    background-color: transparent !important;
+  }
+  .content {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+    padding-top: 4rem;
+  }
+  .logo {
+    height: 260px !important;
+    width: 260px !important;
+    position: absolute;
+    top: 15%;
+    right: 10%;
+  }
+  .text {
+    position: absolute;
+    top: 30%;
+  }
+  .vx {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 30rem !important;
+    height: 12.5rem !important;
+  }
+}
+
 .section {
   width: 100%;
   height: 100vh;
@@ -28,11 +61,16 @@ body,
 
 .s1 header nav .nsita {
   height: 100%;
+  font-size: 18px;
 }
 
 .s1 header nav .nsita img {
   height: 40px;
   vertical-align: middle;
+}
+
+.s1 header nav .nav-item {
+  background-color: rgba(71, 71, 71, 0.5);
 }
 
 .s1 header nav .nav-link {
@@ -44,11 +82,41 @@ body,
   color: white !important;
 }
 
-.s1 text {
-  position: relative;
-  top: 30%;
-  left: 10%;
+.s1 .content {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 4rem;
+}
+
+.s1 .content .desc {
   color: white;
+}
+
+.s1 .content .logo {
+  height: 150px;
+  width: 150px;
+  background: url(../assets/nsita.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto !important;
+}
+
+.s1 .content .vx {
+  width: 20rem;
+  height: 7.5rem;
+  background: url(../assets/vx.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+.s1 .content .text .origin {
+  color: #FF8D1A;
+}
+
+.s1 .content .text .origin h1 {
+  display: none;
 }
 
 .s2 {

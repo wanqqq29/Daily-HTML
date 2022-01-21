@@ -4,6 +4,44 @@ body,
     padding: 0;
 }
 
+.row {
+    margin-right: 0px !important;
+}
+
+@media (min-width:992px) {
+    .nav-item {
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    .content {
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+        padding-top: 4rem;
+    }
+
+    .logo {
+        height: 260px !important;
+        width: 260px !important;
+        position: absolute;
+        top: 15%;
+        right: 10%;
+    }
+
+    .text {
+        position: absolute;
+        top: 30%
+    }
+
+    .vx {
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+        width: 30rem !important;
+        height: 12.5rem !important;
+
+    }
+}
+
 .section {
     width: 100%;
     height: 100vh;
@@ -18,31 +56,74 @@ body,
         background-color: rgba(71.4, 71.4, 71.4, 0.5);
         width: 100%;
         height: 3.5rem;
-        nav{
+
+        nav {
             height: 100%;
             width: 100%;
-            .nsita{
+
+            .nsita {
                 height: 100%;
-                img{
+                font-size: 18px;
+
+                img {
                     height: 40px;
-                    vertical-align:middle;
+                    vertical-align: middle;
                 }
             }
-            .nav-link{
-                color: hsla(0,0%,100%,0.6) !important;
+
+            .nav-item {
+                background-color: rgba(71, 71, 71, 0.5);
+            }
+
+            .nav-link {
+                color: hsla(0, 0%, 100%, 0.6) !important;
                 text-align: center;
-                &:hover{
+
+                &:hover {
                     color: white !important;
                 }
             }
         }
     }
-    text{
-        position: relative;
-        top: 30%;
-        left: 10%;
-        color: white;
+
+    .content {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 4rem;
+
+        .desc {
+            color: white;
+        }
+
+        .logo {
+            height: 150px;
+            width: 150px;
+            background: url(../assets/nsita.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 0 auto !important;
+        }
+
+        .vx {
+            width: 20rem;
+            height: 7.5rem;
+            background: url(../assets/vx.webp);
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 0 auto;
+            margin-top: 10%;
+        }
+
+        .text {
+            .origin {
+                color: #FF8D1A;
+                h1{
+                    display: none;
+                }
+            }
+        }
     }
+
 }
 
 .s2 {
