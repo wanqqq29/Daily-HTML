@@ -45,7 +45,7 @@ body,
 }
 
 .s1 text {
-  position: relative;
+  position: absolute;
   top: 30%;
   left: 10%;
   color: white;
