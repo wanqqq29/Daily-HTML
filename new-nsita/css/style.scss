@@ -29,6 +29,11 @@ body,
 }
 
 @media (min-width:992px) {
+    .section {
+        width: 100%;
+        height: 100vh !important;
+    }
+
     .s1 {
         .nav-item {
             background-color: rgba(0, 0, 0, 0) !important;
@@ -73,6 +78,7 @@ body,
             h2 {
                 font-size: 2rem !important;
             }
+
         }
 
         .p {
@@ -84,6 +90,45 @@ body,
 
             div {
                 flex: 1;
+                height: 120px !important;
+            }
+
+            img {
+                width: 80% !important;
+            }
+        }
+    }
+
+    .s3 {
+        .list_nav {
+            height: 50px !important;
+            display: flex !important;
+            justify-content: space-around;
+            flex-direction: row !important;
+            width: 80%;
+            margin: 0 auto;
+
+            .nav_btn {
+                border-radius: 15px;
+                width: 23% !important;
+                height: 100% !important;
+                line-height: 50px !important;
+                font-size: 1.5rem !important;
+            }
+        }
+
+        .main {
+            margin: 5% auto !important;
+            width: 80%;
+            position: relative;
+            height:auto !important;
+
+            .tab-pane {
+                position: absolute;
+                top: 0px;
+                width: 100%;
+                color: white;
+
             }
         }
     }
@@ -91,7 +136,7 @@ body,
 
 .section {
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 .s1 {
@@ -218,11 +263,11 @@ body,
         div {
             justify-items: center;
             justify-content: space-around;
-            height: 120px;
+            height: 80px;
         }
 
         img {
-            width: 80%;
+            width: 60%;
         }
     }
 }
@@ -231,4 +276,47 @@ body,
     background: url(../assets/section3.webp);
     background-repeat: no-repeat;
     background-size: cover;
+
+    .list_nav {
+        height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .nav_btn {
+            border-radius: 25px;
+            height: 40px;
+            background-color: white;
+            text-align: center;
+            width: 40%;
+            line-height: 40px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                background-color: rgba(155, 103, 245, 1);
+                color: white;
+            }
+        }
+    }
+
+    .main {
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        height:calc(100vh - 4rem - 100px);
+        .tab-pane {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            color: white;
+            background: url(../assets/list.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 30px;
+            text-align: center;
+        }
+    }
 }

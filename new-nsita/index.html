@@ -1,7 +1,7 @@
 <!--
  * @Author: wanqqq29
  * @Date: 2022-01-19 14:45:30
- * @LastEditTime: 2022-01-21 16:56:25
+ * @LastEditTime: 2022-01-24 16:10:45
  * @LastEditors: wanqqq29
  * @Description: blog.wanqqq29.cn
  * @FilePath: \1x3Daily-HTML\new-nsita\index.html
@@ -29,13 +29,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">简介 <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#Introduction">简介 <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">新闻</a>
+                            <a class="nav-link" href="#list">新闻</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ">活动</a>
+                            <a class="nav-link" href="#active">活动</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ">成员</a>
@@ -72,7 +72,7 @@
 
 
     </section>
-    <section class="s2 section">
+    <section class="s2 section" id="Introduction">
         <div class="content">
             <text>
                 <div class="title">
@@ -103,9 +103,21 @@
         </div>
        
     </section>
-    <section class="s3 section">
+    <section class="s3 section" id="list">
         <div class="content">
-            
+            <div class="nav list_nav" id="list_nav">
+                <a class="nav_btn" href="#news" data-toggle="tab" role="tab" aria-controls="news" aria-selected="true"><strong>协会公告</strong></a>
+                <a class="nav_btn" href="#share" data-toggle="tab" role="tab" aria-controls="share" aria-selected="false"><strong>技术分享</strong></a>
+                <a class="nav_btn" href="#act" data-toggle="tab" role="tab" aria-controls="news" aria-selected="true"><strong>协会公告</strong></a>
+                <a class="nav_btn" href="#reward" data-toggle="tab" role="tab" aria-controls="share" aria-selected="false"><strong>技术分享</strong></a>
+                
+            </div>
+            <div class="main">
+                <div class="tab-pane fade show active" aria-labelledby="news-tab" id="news" role="tabpanel">aaa</div>
+                <div class="tab-pane fade " aria-labelledby="share-tab" id="share" role="tabpanel">aaa11</div>
+                <div class="tab-pane fade " aria-labelledby="share-tab" id="act" role="tabpanel">aaa11</div>
+                <div class="tab-pane fade " aria-labelledby="share-tab" id="reward" role="tabpanel">aaa11</div>
+            </div>
         </div>
     </section>
     <script src="./js/jquery.slim.min.js"></script>
