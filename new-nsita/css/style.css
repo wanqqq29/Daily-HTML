@@ -276,7 +276,7 @@ body,
 }
 
 .s3 .main {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   height: calc(100vh - 4rem - 100px);
@@ -292,4 +292,18 @@ body,
   background-size: cover;
   border-radius: 30px;
   text-align: center;
+}
+
+.s3 .main .tab-pane .list {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.s3 .main .tab-pane .list .item {
+  background-color: rgba(87, 96, 195, 0.7);
+  border-radius: 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 24px;
+  margin: 10px auto;
 }
