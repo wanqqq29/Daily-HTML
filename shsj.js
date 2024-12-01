@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         散户收寄
 // @namespace    http://tampermonkey.net/
-// @version      2024-12-1
-// @description  try to take over the world!
-// @author       You
+// @version      2024-12-1-2
+// @description  添加单号列表，第一次点go初始化后在单号框里按回车后自动提交
+// @author       wnqn
 // @match        https://10.4.188.1/portal/a
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=188.1
 // @updateURL    https://raw.githubusercontent.com/wanqqq29/Daily-HTML/refs/heads/master/shsj.js
