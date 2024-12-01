@@ -6,8 +6,8 @@
 // @author       You
 // @match        https://10.4.188.1/portal/a
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=188.1
-// @updateURL    https://raw.githubusercontent.com/wanqqq29/emsvercelnav/main/shsj.js
-// @downloadURL  https://raw.githubusercontent.com/wanqqq29/emsvercelnav/main/shsj.js
+// @updateURL    https://raw.githubusercontent.com/wanqqq29/Daily-HTML/refs/heads/master/shsj.js
+// @downloadURL  https://raw.githubusercontent.com/wanqqq29/Daily-HTML/refs/heads/master/shsj.js
 // @grant        none
 // ==/UserScript==
 
