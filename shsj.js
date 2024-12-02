@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         散户收寄
 // @namespace    http://tampermonkey.net/
-// @version      2024-12-1-2
-// @description  测试版本：添加单号列表，第一次点go初始化后在单号框里按回车后自动提交
+// @version      2024-12-2-1
+// @description  优化第二版，待测试
 // @author       wnqn
 // @match        https://10.4.188.1/portal/a
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=188.1
@@ -106,7 +106,7 @@
         iframeDocument.getElementById('senderLinker').value = nameInput.value
         iframeDocument.getElementById('senderIdEncryptedCode').value = nameInput.value
         iframeDocument.getElementById('senderIdNo').value = numInput.value
-
+        console.log('插入身份信息')
 
     }
     function insertNeiJian() {
@@ -117,6 +117,7 @@
         iframeDocument.getElementById('contentsTypeNoss1').value = njInput.value
         iframeDocument.getElementById('addcargo').click()
         iframeDocument.querySelector("#cargoMaterial > div.modal-body > div:nth-child(6) > div > div.span2 > input").click()
+        console.log('插入内件信息')
     }
 
     let items = [];
@@ -124,8 +125,8 @@
 
     // 更新进度显示
     function updateProgress() {
-        progressDiv.textContent = (currentIndex) + '/' + items.length;
         currentIndex += 1
+        progressDiv.textContent = `已完成：${currentIndex}/剩余:${items.length - currentIndex}`
     }
 
     //处理单号
@@ -140,8 +141,11 @@
         const iframe = getDom()
         var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
         iframeDocument.getElementById('waybillNo').value = WaybillNo
+        console.log('插入订单')
         //添加内件
-
+        const inputElement = iframeDocument.getElementById('receiverAddr')
+        inputElement.value = ""
+        console.log('置空地址')
 
     }
 
@@ -174,7 +178,11 @@
 
     // Define the go function
     function go() {
+
         getWaybillListFromTextArea()//切割单号
+        currentIndex = 0
+        progressDiv.textContent = `已完成：${currentIndex}/剩余:${items.length - currentIndex}`
+        console.log(currentIndex, items.length)
         insertWaybillNo(items[currentIndex]);
 
         const iframe = getDom()
@@ -195,6 +203,7 @@
                     // 开始监听值的变化
                     intervalId = setInterval(() => {
                         if (inputElement.value !== lastValue) {
+                            console.log(inputElement.value)
                             // 值改变了，执行main函数
                             performTasks();
 
@@ -212,5 +221,13 @@
         var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
         iframeDocument.getElementById('smt').click()
         updateProgress()
+        console.log('提交')
     }
+    njInput.value = '鞋'
+    nameInput.value = '吴凤旺'
+    numInput.value = '371722200402193819'
+    textareaDom.value = `1263526997316
+1263526997316
+1263526997316
+`
 })();
