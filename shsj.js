@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         散户收寄
 // @namespace    http://tampermonkey.net/
-// @version      2024-12-2-1
+// @version      2024-12-2-2
 // @description  优化第二版，待测试
 // @author       wnqn
 // @match        https://10.4.188.1/portal/a
@@ -223,11 +223,11 @@
         updateProgress()
         console.log('提交')
     }
-    njInput.value = '鞋'
-    nameInput.value = '吴凤旺'
-    numInput.value = '371722200402193819'
-    textareaDom.value = `1263526997316
-1263526997316
-1263526997316
-`
+//     njInput.value = '鞋'
+//     nameInput.value = '吴凤旺'
+//     numInput.value = '371722200402193819'
+//     textareaDom.value = `1263526997316
+// 1263526997316
+// 1263526997316
+// `
 })();
